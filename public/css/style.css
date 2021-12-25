@@ -1,0 +1,1321 @@
+/* CSS declare variables */
+:root {
+  --red: #bb0a01;
+  --dark-red: #810600;
+  --light-pink: #e4dadf;
+  --very-light-gray: #c5cfd3;
+  --light-gray: #929fa6;
+  --gray: #485864;
+  --black: #0c1013;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* CSS styling document */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Inter Google font */
+@font-face {
+  font-family: inter;
+  src: url(../fonts/Inter-Light.ttf);
+}
+
+/* Class for adding inter font */
+/* Used in position subtitle above main document title */
+.font-inter {
+  font-family: inter;
+}
+
+/* Text color classes */
+.text-red {
+  color: var(--red);
+}
+
+.text-light-pink {
+  color: var(--light-pink);
+}
+
+.text-light-gray {
+  color: var(--light-gray);
+}
+
+.text-gray {
+  color: var(--gray);
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+/* Background color classes */
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-dark-red {
+  background-color: var(--dark-red);
+}
+
+.bg-light-pink {
+  background-color: var(--light-pink);
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+
+.bg-very-light-gray {
+  background-color: var(--very-light-gray);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.bg-black {
+  background-color: var(--black);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+/* Text center class */
+.text-center {
+  text-align: center;
+}
+
+/* Font styling classes */
+.font-bold {
+  font-weight: bold;
+}
+
+.font-bolder {
+  font-weight: 900;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+/* Font size classes */
+.font-size-tiny {
+  font-size: 10px;
+}
+
+/*Navigation bar*/
+
+/* Navigation colour links */
+nav li a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+/*---------------------main-----------------------*/
+
+/*------------------Navigation Bar----------------*/
+/* flex box for navigation bar */
+.flex-nav-list {
+  display: flex;
+  background: var(--white);
+  list-style-type: none;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 15px;
+}
+
+/*margin between navigaton bar items*/
+.nav-item {
+  margin-right: 2rem;
+}
+
+/*Only the logo*/
+.nav-item:first-child {
+  margin-right: auto;
+  margin-left: 1rem;
+}
+
+/* logo size */
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+/* button preferences*/
+.btn-preferences {
+  border-radius: 6px;
+  border-color: var(--red);
+  font-size: 18px;
+  width: auto;
+  height: 30px;
+}
+
+.white-button {
+  background: #ffffff;
+  border-radius: 16px;
+  border-color: #bb0a01;
+  font-size: 25px;
+  width: 192px;
+  height: 52px;
+  color: #bb0a01;
+  border-width: 5px;
+}
+
+.white-button:hover {
+  background-color: var(--light-pink);
+}
+
+.white-button:active {
+  background-color: #e5e5e5;
+  box-shadow: 0 2px #485864;
+  transform: translateY(2px);
+}
+
+.red-button {
+  background: #bb0a01;
+  border-radius: 6px;
+  font-size: 18px;
+  width: 192px;
+  height: 52px;
+  color: #ffffff;
+}
+
+.red-button:hover {
+  background-color: #ec0c00;
+}
+
+.red-button:active {
+  background-color: #a70800;
+  box-shadow: 0 2px rgb(141, 141, 141);
+  transform: translateY(2px);
+}
+
+/* Responsive for navigation bar */
+@media (max-width: 940px) {
+  .flex-nav-list {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*margin between navigaton bar items*/
+  .nav-item {
+    margin: 1rem;
+  }
+
+  /*Only the logo*/
+  .nav-item:first-child {
+    margin-left: auto;
+  }
+}
+
+/* ------------------Introduction page-----------------*/
+#intro {
+  background-image: url(../images/intro_image.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 80vh;
+  width: auto;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 2px;
+}
+
+/* a small flex box for indroduction page */
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+/*Resless Learners*/
+.overlay h2 {
+  color: var(--light-pink);
+  font-size: 48px;
+  background-color: #525252cb;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+/*Responsive*/
+@media (max-width: 950px) {
+  /*Resless Learners*/
+  .overlay h2 {
+    color: var(--light-pink);
+    font-size: 48px;
+    background-color: #525252cb;
+    border-radius: 20px;
+    padding: 5px;
+    max-width: 400px;
+  }
+}
+
+/*-------------------- MOOC INFO-------------------*/
+/* a flex box with 3 elements */
+.flex-mooc-info {
+  display: flex;
+  flex-flow: row wrap;
+  max-height: 100%;
+  background: var(--white);
+  margin-left: 2em;
+  margin-right: 2em;
+  margin: 1.5em 2em 0em 2em;
+  /*justify-content: flex-end;
+  align-items: center;*/
+  background-color: whitesmoke;
+}
+
+#enabling-transformations {
+  max-width: 100%;
+  height: auto;
+  /*background-color: #b9bd4ecb;*/
+}
+
+#experience {
+  max-width: 30%;
+  /* background-color: #10ac0bcb; */
+}
+
+#brain {
+  margin-left: 10%;
+  max-width: 60%;
+  /* background-color: #0b0eaccb; */
+}
+
+#brain > img {
+  max-width: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 1500px) {
+  #brain > img {
+    max-width: 700px;
+  }
+}
+
+/* smaller images */
+@media screen and (max-width: 1200px) {
+  #brain > img {
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #brain > img {
+    max-width: 300px;
+  }
+}
+
+/* One column */
+@media screen and (max-width: 950px) {
+  .flex-mooc-info {
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+
+  #experience {
+    max-width: 100%;
+  }
+
+  #brain {
+    max-width: 100%;
+  }
+}
+
+/*------------------Our partners-----------------*/
+.partners {
+  margin: 0px;
+}
+
+#knowledge {
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 70px;
+}
+
+.flex-our-partners {
+  display: flex;
+  background: var(--light-pink);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+  flex-flow: row wrap;
+}
+
+.university-logos {
+  width: 150px;
+  height: auto;
+  max-height: 90px;
+}
+
+/*About us page*/
+/*Who we are*/
+.flex-who-we-are {
+  display: flex;
+  background: var(--very-light-gray);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+/*Our Vision*/
+.flex-our-vision {
+  display: flex;
+  background: var(--light-pink);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.about-us-info-text {
+  max-width: 45%;
+  margin: 50px 40px 50px 40px;
+  border-radius: 10px;
+}
+
+/* About us images */
+.about-us-img {
+  max-width: 100%;
+  margin: 2rem;
+}
+
+.about-us-img > img,
+.about-us-img > source {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/*Our team*/
+/*margin for h2 our team*/
+.margin {
+  margin-top: 50px;
+}
+
+/*create a flex box for the two students*/
+.flex-our-team {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--white);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.students {
+  max-width: 45%;
+  padding: 15px;
+  border: 1px solid var(--white);
+}
+
+.students:hover {
+  border: 1px solid var(--red);
+}
+
+/*-----------------------George page-----------------------*/
+
+/* Create a grid layout with 3 elements and inside the two of them we create a flex box */
+.grid-cv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  margin: 2rem 10%;
+  grid-template-areas:
+    "george george"
+    "left right";
+}
+
+/* the first element of the flexbox which is on top */
+#George-Info {
+  text-align: center;
+  margin-bottom: 5px;
+  background-color: var(--dark-red);
+  grid-area: george;
+}
+
+/* the two other elements that contain flexboxes */
+#left-side {
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 5px;
+  padding: 2em;
+  background-color: var(--very-light-gray);
+  display: flex;
+  flex-direction: column;
+  grid-area: left;
+}
+
+#right-side {
+  text-align: center;
+  margin-top: 0px;
+  margin-left: 0px;
+  background-color: var(--light-pink);
+  display: flex;
+  flex-direction: column;
+  grid-area: right;
+}
+
+/*Responsive*/
+/* a change in thr template area where everything will be in a column from now on */
+@media screen and (max-width: 1150px) {
+  .grid-cv {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin: 2rem 5%;
+    grid-template-areas:
+      "george"
+      "left"
+      "right";
+  }
+
+  #George-Info {
+    width: 80vh;
+    justify-self: center;
+  }
+
+  #left-side {
+    justify-self: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 40px;
+    background-color: var(--very-light-gray);
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+  }
+
+  #right-side {
+    justify-self: center;
+    margin-top: 5px;
+    margin-left: 40px;
+    background-color: var(--light-pink);
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+  }
+}
+
+/* breakpoint for smartphones */
+@media screen and (max-width: 950px) {
+  .grid-cv {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin: 2rem 5%;
+    grid-template-areas:
+      "george"
+      "left"
+      "right";
+  }
+
+  #George-Info {
+    width: 70vh;
+    justify-self: center;
+  }
+
+  #left-side {
+    justify-self: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 40px;
+    background-color: var(--very-light-gray);
+    display: flex;
+    flex-direction: column;
+    width: 70vh;
+  }
+
+  #right-side {
+    justify-self: center;
+    margin-top: 5px;
+    margin-left: 40px;
+    background-color: var(--light-pink);
+    display: flex;
+    flex-direction: column;
+    width: 70vh;
+  }
+}
+
+/*-------------------Contact------------------*/
+/* flex box with two elements,the contact form and a map */
+.flex-contact {
+  display: flex;
+  background: var(--light-pink);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+  margin-top: 0px;
+  flex-flow: row wrap;
+}
+
+/* Contact Form */
+.flex-contact section:nth-child(1) {
+  margin-right: 10%;
+}
+
+.form-input-contact {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 3px;
+}
+
+/* Map */
+iframe {
+  width: 800px;
+  height: 650px;
+  border: 0;
+  margin-top: 10%;
+}
+
+/* Font for the contact form */
+.font-contact {
+  margin-top: 0px;
+  padding: 15px;
+  font-size: 42px;
+  margin-bottom: 0px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1350px) {
+  .flex-contact section:nth-child(1) {
+    margin-bottom: 10%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .flex-contact section:nth-child(1) {
+    margin-bottom: 10%;
+  }
+
+  iframe {
+    width: 450px;
+    height: 350px;
+    margin-left: -10%;
+  }
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+/* Flexbox classes */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-content-start {
+  justify-content: start;
+}
+
+.flex-content-center {
+  justify-content: center;
+}
+
+.flex-content-end {
+  justify-content: end;
+}
+
+.flex-content-between {
+  justify-content: space-between;
+}
+
+.flex-content-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-content-around {
+  justify-content: space-around;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+/* Positioning classes */
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+/* Width classes */
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+/* Margin classes */
+.my-2 {
+  margin: 2rem 0;
+}
+
+/* Padding classes */
+.py-2 {
+  padding: 2rem 0;
+}
+
+/* Footer styling classes and ids */
+footer {
+  display: flex;
+  margin-top: 8rem;
+  padding: 5rem 8rem;
+  flex-direction: column;
+  background-color: #929fa6;
+}
+
+/* Grid for styling footer's top row */
+#footer-top-row {
+  display: grid;
+  grid-template-columns: [company-logo]5fr [top-courses]1fr [company]1fr [buttons]1fr;
+  grid-template-rows: 1fr;
+  column-gap: 1rem;
+}
+
+/* Style for the footer's login and register buttons */
+.footer-grid-buttons {
+  justify-self: start;
+  align-self: center;
+}
+
+/* Class for styling the footer's links */
+.link-img {
+  width: 60px;
+  height: auto;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.person-img {
+  width: 180px;
+  height: auto;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+/* Styles the company's logo in the footer */
+#company-logo {
+  width: 8rem;
+  height: auto;
+}
+
+/* Footer's horizantal line */
+#footer-hr {
+  width: 100%;
+  height: 1px;
+  margin: 3rem 0;
+  border: 0;
+  border-top: 1px solid #bb0a01;
+  /* background-image: linear-gradient(to right, rgba(187, 10, 1, 0), rgba(187, 10, 1, 0.75), rgba(187, 10, 1, 0)); */
+}
+
+.footer-link {
+  margin-bottom: 0.2rem;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+}
+
+.menu-link:hover {
+  opacity: 0.7;
+}
+
+/* Button class */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Register button */
+.register-btn-nav-bar {
+  margin-bottom: 0rem;
+  color: white;
+  background-color: #bb0a01;
+}
+
+.register-btn-nav-bar:hover {
+  color: #bb0a01;
+  background-color: white;
+}
+
+.register-btn {
+  margin-bottom: 1rem;
+  color: white;
+  background-color: #bb0a01;
+}
+
+.register-btn:hover {
+  color: #bb0a01;
+  background-color: white;
+}
+
+/* Login and logout button */
+.log-btn {
+  color: #bb0a01;
+  background-color: white;
+}
+
+.log-btn:hover {
+  color: white;
+  background-color: #bb0a01;
+}
+
+/* Class for limiting the content away from the edges */
+.container {
+  margin: 2rem 10%;
+}
+
+/* Title styling for subjects and courses pages */
+.content-header {
+  overflow: hidden;
+}
+
+/* Style for the text above the title, indicating the location inside the website */
+.content-header a,
+.content-header span {
+  margin-right: 5px;
+  color: #485864;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.content-header a:hover {
+  color: #0c1013;
+}
+
+/* The title of the webpage */
+.content-header h1 {
+  margin-right: 1rem;
+  color: #0c1013;
+  font-size: 32px;
+}
+
+/* Red horizontal line next to the title */
+.red-line {
+  flex-grow: 1;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #bb0a01;
+}
+
+/* Page description */
+.content-header p {
+  color: #485864;
+}
+
+/* Positioning the content-header's title correctly */
+.content-title {
+  margin: -18px 0;
+}
+
+/* Section encompassing a subject and it's courses */
+.subject-section {
+  margin: 3rem 0;
+}
+
+/* Subject's preview image */
+.subject-img {
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+/* Relocate the 2nd image a bit */
+.subject-img-second {
+  margin: -820px 0 0 -200px;
+}
+
+/* Relocate the 4th image a bit */
+.subject-img-fourth {
+  margin: -200px 0 0 -900px;
+}
+
+.subject-section ul {
+  list-style-type: none;
+}
+
+.subject-section li {
+  margin-bottom: 1.5rem;
+}
+
+/* Name of a course in a subject section */
+.subject-section .course-name {
+  display: inline-block;
+  color: #0c1013;
+  font-weight: 900;
+}
+
+/* Info box next to course name */
+.course-info-box {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 4px;
+  color: #485864;
+  border-radius: 10px;
+  background-color: #e4dadf;
+}
+
+/* More info links styling */
+.subject-section .more-info-link {
+  color: #bb0a01;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.subject-section .more-info-link:hover {
+  color: #e4dadf;
+}
+
+/* Section describing a single course */
+.course-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.course-img {
+  max-width: 20%;
+  height: auto;
+}
+
+.course-section h3 {
+  display: inline;
+  color: #0c1013;
+  font-size: 26px;
+}
+
+.course-section span {
+  margin-left: 8px;
+  color: #485864;
+}
+
+/* Course's covered topics */
+.course-section ol li {
+  color: #0c1013;
+  font-weight: 900;
+}
+
+/* Links to external resources */
+.course-section a:not(.enroll-btn) {
+  display: block;
+  color: #bb0a01;
+}
+
+.course-section a:not(enroll-btn):hover {
+  opacity: 0.8;
+}
+
+/* Button for enrolling for a specific lesson */
+/* Floats right */
+.enroll-btn {
+  float: right;
+  padding: 7px;
+  border: 1px solid #bb0a01;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  background-color: #bb0a01;
+}
+
+/* Above button's hover effect */
+.enroll-btn:hover {
+  color: #bb0a01;
+  background-color: white;
+}
+
+/* Costas page styling classes and ids */
+/* Profile image style */
+#costas-profile-img {
+  max-width: 400px;
+  height: auto;
+}
+
+/* Aueb logo beneath */
+#costas-aueb-logo {
+  margin-left: 10px;
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Images redirecting to external links */
+.costas-external-links {
+  width: 120px;
+  height: auto;
+  margin: 0 2rem;
+  border: 1px solid whitesmoke;
+  border-radius: 50%;
+}
+
+.costas-external-links:hover {
+  border: 1px solid #bb0a01;
+}
+
+/* # Table containing more infomarion about Costas */
+#costas-info-table {
+  margin: 5rem 0;
+}
+
+/* Center the table */
+#costas-info-table table {
+  width: 50%;
+  margin: 5rem auto;
+  border-collapse: collapse;
+}
+
+/* Rows */
+#costas-info-table tr {
+  font-size: 20px;
+}
+
+/* Make the second column align right */
+#costas-info-table td:nth-child(even) {
+  text-align: right;
+}
+
+/* Columns */
+#costas-info-table td {
+  padding: 1rem;
+  color: #0c1013;
+  font-weight: 400;
+}
+
+/* Registration form in register.html */
+#registration-form {
+  margin: 2rem 25rem;
+}
+
+#registration-form fieldset {
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+#registration-form legend {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--red);
+}
+
+#registration-form details {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: var(--very-light-gray);
+  border-radius: 5px;
+}
+
+#registration-form details > summary {
+  color: var(--dark-red);
+  cursor: pointer;
+}
+
+/* Have the inputs below their labels */
+#registration-form .register-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#registration-form .register-item label {
+  margin-top: 3px;
+  font-weight: bold;
+}
+
+/* Trim the edges of the input tags and enlarge them */
+#registration-form .register-item input,
+#registration-form .register-item select {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 3px;
+}
+
+#registration-form .register-item select {
+  background-color: var(--light-pink);
+}
+
+/* Styles for checkboxes and radio buttons */
+#registration-form .register-item-entry {
+  margin: 0.25rem 0;
+}
+
+#registration-form .register-item-entry label {
+  font-size: 15px;
+}
+
+/* Margin-top 1 rem */
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-bottom: 1rem;
+}
+
+/* Questionnaire inside the registration form */
+#questionnaire-line {
+  margin: 2rem 0;
+  border-top: 1px solid var(--red);
+}
+
+#questionnaire-title {
+  display: inline;
+}
+
+#register-submit-btn {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1rem;
+  color: var(--red);
+  font-size: 22px;
+  border: 1px solid var(--red);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#register-submit-btn:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+/* Tablet */
+@media screen and (max-width: 1056px) {
+  /* Same as in mobile */
+  .course-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Same as in mobile */
+  .course-img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* About page styling */
+  .about-us-info-text {
+    max-width: 45%;
+  }
+
+  .about-us-img {
+    max-width: 45%;
+    margin: 1.5rem 1rem;
+  }
+
+  .about-us-img > img,
+  .about-us-img > source {
+    max-width: 90%;
+  }
+
+  /* Enlarge the students' links */
+  .students {
+    max-width: 95%;
+  }
+
+  #registration-form {
+    margin: 2rem 10rem;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 756px) {
+  footer {
+    padding: 5rem;
+  }
+
+  #footer-top-row {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 1rem;
+    justify-items: center;
+  }
+
+  .footer-grid-buttons {
+    justify-self: center;
+  }
+
+  .sm-flex-col {
+    flex-direction: column;
+  }
+
+  .sm-text-center {
+    text-align: center;
+  }
+
+  .sm-flex-content-start {
+    justify-content: start;
+  }
+
+  .sm-flex-content-center {
+    justify-content: center;
+  }
+
+  .sm-flex-content-between {
+    justify-content: space-between;
+  }
+
+  .sm-items-center {
+    align-items: center;
+  }
+
+  /* Width 100% for small screens */
+  .sm-w-100 {
+    width: 100%;
+  }
+  /* Margin class for small devices */
+  .sm-my-2 {
+    margin: 2rem 0;
+  }
+
+  #footer-hr {
+    margin: 40px auto;
+  }
+
+  .sm-m-y-1 {
+    margin: 1rem 0;
+  }
+
+  /* Shrink the table at costas about page */
+  #costas-info-table table {
+    width: 100%;
+  }
+
+  #costas-info-table tr {
+    font-size: 16px;
+  }
+
+  /* Change the orientation of the course-section */
+  .course-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Let the image span the entire length of the screen */
+  .course-img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .course-section h3 {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Realign the 'Enroll' button */
+  .enroll-btn {
+    float: left;
+    margin-top: 1rem;
+  }
+
+  /* Hide the red line */
+  .red-line {
+    display: none;
+  }
+
+  /* About page styling */
+  .flex-who-we-are,
+  .flex-our-vision {
+    flex-wrap: wrap;
+  }
+
+  .about-us-info-text {
+    max-width: 100%;
+  }
+
+  .about-us-img {
+    max-width: 100%;
+    margin: 1.5rem 1rem;
+  }
+
+  .about-us-img > img,
+  .about-us-img > source {
+    max-width: 100%;
+  }
+
+  #registration-form {
+    margin: 2rem 1rem;
+  }
+}
+
+/* Validation Form output errors*/
+#check-first-name {
+  margin: 0px;
+  color: red;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+}
+
+#check-age {
+  margin: 0px;
+  color: red;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+}
+
+#check_password_confirm {
+  margin: 0px;
+  color: red;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+}
