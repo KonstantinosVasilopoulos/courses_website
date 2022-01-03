@@ -28,5 +28,11 @@ app.use(express.static('public'))
 // Connect the router
 app.get('/', routes)
 
+// Registration page
+app.get('/register', (req, res, next) => {
+    res.render('register', { layout: 'main' })
+    console.log('Served register.')
+})
+
 // Make the app listen to port 3000
 app.listen(port, () => console.log(`App listening to port ${port}.`))
