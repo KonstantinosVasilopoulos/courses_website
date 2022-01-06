@@ -25,7 +25,7 @@ router.get("/", (req, res, next) => {
 });
 
 app.post("/", function (req, res) {
-  console.log(req.body.course);
+  console.log(req.body.courseName);
 });
 
 module.exports = router;
