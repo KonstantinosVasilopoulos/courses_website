@@ -4,13 +4,15 @@
     <h2>Restless learners change the world</h2>
     <button class="white-button" onclick="document.location='subjects.html'">Join Today</button>
     <div id="search">
-      <h2>Search for a <span class="text-red">course</span></h2>
-      <form id="search-course"action="/app.js" method="post">
-        <input type="text" name="courseKey" placeholder="Java" />
-        <button type="submit" name="sumbit" class="register-btn-nav-bar btn-preferences">Search</button>
+      <h2>Let's start learning!</h2>
+      <form id="search-course" action="/" method="post">
+      <label for="courseInput" class="font-bold">Search with a <span class="text-red"> course name </span><br>
+        <input id="courseInput"type="text" name="course" placeholder="Java" />
+        <label for="courseInput" class="font-bold">Search with a <span class="text-red"> course ID </span><br>
+        <input id="courseInput"type="text" name="course" placeholder="Java" />
+        <button type="submit" name="sumbit" class="register-btn-nav-bar btn-preferences">Apply</button>
       </form>
     </div>
-
   </section>
 
   <!-- MOOC INFO -->
