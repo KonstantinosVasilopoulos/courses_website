@@ -3,6 +3,16 @@
   <section id="intro" class="overlay">
     <h2>Restless learners change the world</h2>
     <button class="white-button" onclick="document.location='subjects.html'">Join Today</button>
+    <div id="search">
+      <h2>Let's start learning!</h2>
+      <form id="search-course" action="/" method="post">
+        <label for="courseName" class="font-bold">Search with a <span class="text-red"> course name </span></label><br />
+        <input id="courseName" type="text" name="courseName" placeholder="Java" />
+        <label for="courseID" class="font-bold">Search with a <span class="text-red"> course ID </span></label><br />
+        <input id="courseID" type="text" name="courseID" placeholder="Java" />
+        <button type="submit" name="sumbit" class="register-btn-nav-bar btn-preferences">Apply</button>
+      </form>
+    </div>
   </section>
 
   <!-- MOOC INFO -->
@@ -10,8 +20,8 @@
     <div id="enabling-transformations">
       <h2 class="text-red">Enabling transformations</h2>
       <h3>
-        Your (Name of MOOC) learning experience is grounded in cutting edge cognitive science. With more than two dozen
-        distinct learning features to help you achieve your goals, our approach follows three key principles:
+        Your (Name of MOOC) learning experience is grounded in cutting edge cognitive science. With more than two dozen distinct
+        learning features to help you achieve your goals, our approach follows three key principles:
       </h3>
     </div>
     <div id="experience">
