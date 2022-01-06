@@ -1,13 +1,11 @@
 const path = require("path");
+const cors = require("cors");
 
 // Load the express module
 const express = require("express");
 
 // Load the handlebars module
 const handlebars = require("express-handlebars");
-
-// Load the router
-const routes = require(path.join(__dirname, "routes", "index"));
 
 // Create the express server
 const app = express();
@@ -27,10 +25,17 @@ app.set("views", path.join(__dirname, "views"));
 
 // Serve static files
 app.use(express.static("public"));
-//app.use("/static", express.static(path.join(__dirname, "public")));
 
-// Connect the router
-app.get("/", routes);
+// CORS setup
+// app.use(cors());
+
+
+// URLs
+// Homepage
+app.get("/", (req, res, next) => {
+  res.render("index", { layout: "main" });
+  console.log("Served index.");
+});
 
 // Registration page
 app.get("/register", (req, res, next) => {
