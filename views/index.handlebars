@@ -1,5 +1,4 @@
 <main class="grid-main">
-  <script src="javascript/search_courses.js"></script>
 
   <!-- Into Image & sign up -->
   <section id="intro" class="overlay">
@@ -7,11 +6,12 @@
     <button class="white-button" onclick="document.location='subjects.html'">Join Today</button>
     <div id="search">
       <h2>Let's start learning!</h2>
-      <form id="search-course" onSubmit="searchCourse()">
+      <form id="search-course">
         <label for="courseName" class="font-bold">Search for a <span class="text-red"> course </span></label><br />
-        <input id="courseName" type="text" name="courseName" placeholder="Java" />
-        <button type="submit" name="sumbit" class="register-btn-nav-bar btn-preferences">Apply</button>
+        <input id="courseName" type="text" name="courseName" placeholder="Java" value="java" />
+        <button id="get-course" type="submit" name="submit" class="register-btn-nav-bar btn-preferences">Apply</button>
       </form>
+      <div id="output"></div>
     </div>
   </section>
 
@@ -61,4 +61,5 @@
       <img class="university-logos" src="images/uoa_logo.png" alt="uoa logo" />
     </div>
   </section>
+  <script src="javascript/search_courses.js"></script>
 </main>

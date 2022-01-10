@@ -29,7 +29,6 @@ app.use(express.static("public"));
 // CORS setup
 // app.use(cors());
 
-
 // URLs
 // Homepage
 app.get("/", (req, res, next) => {
