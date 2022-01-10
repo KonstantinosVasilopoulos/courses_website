@@ -2,22 +2,26 @@ const API_URL = "https://elearning-aueb.herokuapp.com/";
 
 /* Query and fetch API data using a provided keyword */
 
-// Retrieve the keyword from it's input field
-const keyword = document.getElementById("courseName").value;
+const searchBtn = document.getElementById('search-keyword-btn')
+searchBtn.addEventListener('click', (event) => {
+    event.preventDefault()
 
-// Fetch the courses by title
-let searchForm = document.getElementById("get-course");
-searchForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  fetch(API_URL + "courses/search?title=" + keyword, {
-    mode: "cors",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("h1");
+    // Retrieve the keyword from it's input field
+    const keyword = document.getElementById('courseName').value
+
+    // Fetch the courses by title
+    fetch(API_URL + 'courses/search?title=' + keyword)
+    .then(response => response.json())
+    .then(data => {
+        // Get and compile the handlebars template
+        const source = document.getElementById('course-results-preview').innerHTML
+        const template = Handlebars.compile(source)
+
+        // Create a new preview for each course fetched
+        data.forEach((course) => {
+            console.log(course)
+        })
     })
-    .catch((error) => console.log(error));
-});
+    .catch(err => console.log(err))
+})
+

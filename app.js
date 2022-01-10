@@ -26,12 +26,16 @@ app.set("views", path.join(__dirname, "views"));
 // Serve static files
 app.use(express.static("public"));
 
-// CORS setup
+// Configure CORS
+const corsOptions = {
+  origin:  'https://elearning-aueb.herokuapp.com/',
+  originSuccessStatus: 200,
+}
 // app.use(cors());
 
 // URLs
 // Homepage
-app.get("/", (req, res, next) => {
+app.get("/", cors(corsOptions), (req, res, next) => {
   res.render("index", { layout: "main" });
   console.log("Served index.");
 });
