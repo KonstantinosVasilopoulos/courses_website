@@ -727,6 +727,10 @@ iframe {
 }
 
 /* Padding classes */
+.p-5 {
+  padding: 5rem;
+}
+
 .py-2 {
   padding: 2rem 0;
 }

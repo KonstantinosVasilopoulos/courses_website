@@ -1,18 +1,21 @@
 <main class="grid-main">
-  <script src="javascript/search_courses.js"></script>
-
   <!-- Into Image & sign up -->
   <section id="intro" class="overlay">
     <h2>Restless learners change the world</h2>
     <button class="white-button" onclick="document.location='subjects.html'">Join Today</button>
     <div id="search">
       <h2>Let's start learning!</h2>
-      <form id="search-course" onSubmit="searchCourse()">
+      <form id="search-course">
         <label for="courseName" class="font-bold">Search for a <span class="text-red"> course </span></label><br />
         <input id="courseName" type="text" name="courseName" placeholder="Java" />
-        <button type="submit" name="sumbit" class="register-btn-nav-bar btn-preferences">Apply</button>
+        <button id="search-keyword-btn" type="submit" name="sumbit" class="register-btn-nav-bar btn-preferences">Apply</button>
       </form>
     </div>
+  </section>
+
+  {{!-- Search results --}}
+  <section id="course-results-preview" class="p-5">
+    
   </section>
 
   <!-- MOOC INFO -->
@@ -61,4 +64,14 @@
       <img class="university-logos" src="images/uoa_logo.png" alt="uoa logo" />
     </div>
   </section>
+
+  {{!-- Handlebars template for previewing searched courses --}}
+  <script id="subject-preview" type="text/x-handlebars-template">
+    <div>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+    </div>
+  </script>
+
+  <script src="javascript/search_courses.js"></script>
 </main>
