@@ -18,7 +18,12 @@ searchBtn.addEventListener('click', (event) => {
 
         // Create a new preview for each course fetched
         data.forEach((course) => {
-            console.log(course)
+            const html = template({
+                title: course.title,
+                description: course.description,
+            })
+
+            console.log(html)
         })
     })
     .catch(err => console.log(err))
