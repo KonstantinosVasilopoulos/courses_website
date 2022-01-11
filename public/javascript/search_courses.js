@@ -12,19 +12,18 @@ searchBtn.addEventListener('click', (event) => {
     fetch(API_URL + 'courses/search?title=' + keyword)
     .then(response => response.json())
     .then(data => {
+        // Search result's section tag
+        const destination = document.getElementById('course-results-preview')
+
         // Get and compile the handlebars template
-        const source = document.getElementById('course-results-preview').innerHTML
+        const source = document.getElementById('course-preview').innerHTML
         const template = Handlebars.compile(source)
 
-        // Create a new preview for each course fetched
-        data.forEach((course) => {
-            const html = template({
-                title: course.title,
-                description: course.description,
-            })
-
-            console.log(html)
+        // Create the preview for the courses fetched
+        const html = template({
+            courses: data,
         })
+        destination.innerHTML += html
     })
     .catch(err => console.log(err))
 })
