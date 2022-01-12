@@ -28,9 +28,9 @@ app.use(express.static("public"));
 
 // Configure CORS
 const corsOptions = {
-  origin:  'https://elearning-aueb.herokuapp.com/',
+  origin: "https://elearning-aueb.herokuapp.com/",
   originSuccessStatus: 200,
-}
+};
 // app.use(cors());
 
 // URLs
