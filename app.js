@@ -70,10 +70,10 @@ app.listen(port, () => console.log(`App listening to port ${port}.`));
   return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
 }); */
 
-hbs.registerHelper("link", function (url) {
+/* hbs.registerHelper("link", function (url) {
   var url = hbs.escapeExpression(url);
   return new hbs.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
-});
+}); */
 
 /* var hbs = handlebars.create({
   // Specify helpers which are only registered on this instance.

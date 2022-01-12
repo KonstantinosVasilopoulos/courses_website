@@ -20,6 +20,10 @@ searchBtn.addEventListener("click", (event) => {
       const source = document.getElementById("course-preview").innerHTML;
       const template = Handlebars.compile(source);
 
+      Handlebars.registerHelper("link", function (url) {
+        var url = Handlebars.escapeExpression(url);
+        return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
+      });
       // Create the preview for the courses fetched
       const html = template({
         courses: data,
