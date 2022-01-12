@@ -1131,6 +1131,13 @@ footer {
 .mt-1 {
   margin-top: 1rem;
 }
+.mt-05 {
+  margin-top: 0.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0rem;
+}
 
 .mt-2 {
   margin-bottom: 1rem;
