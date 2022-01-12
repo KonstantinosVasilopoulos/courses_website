@@ -7,6 +7,9 @@ const express = require("express");
 // Load the handlebars module
 const handlebars = require("express-handlebars");
 
+// Load the handlebars
+const hbs = require("handlebars");
+
 // Create the express server
 const app = express();
 const port = 3000;
@@ -15,6 +18,12 @@ const port = 3000;
 app.engine(
   "handlebars",
   handlebars.engine({
+    /*     helpers: {
+      link: function (url) {
+        var url = Handlebars.escapeExpression(url);
+        return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
+      },
+    }, */
     layoutsDir: path.join(__dirname, "views", "layouts"),
     defaultLayout: "main",
     partialsDir: path.join(__dirname, "views", "partials"),
@@ -61,12 +70,12 @@ app.listen(port, () => console.log(`App listening to port ${port}.`));
   return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
 }); */
 
-/* handlebars.registerHelper("link", function (url) {
-  var url = Handlebars.escapeExpression(url);
-  return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
-}); */
+hbs.registerHelper("link", function (url) {
+  var url = hbs.escapeExpression(url);
+  return new hbs.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
+});
 
-var hbs = handlebars.create({
+/* var hbs = handlebars.create({
   // Specify helpers which are only registered on this instance.
   helpers: {
     link: function (url) {
@@ -74,4 +83,4 @@ var hbs = handlebars.create({
       return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
     },
   },
-});
+}); */
