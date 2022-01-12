@@ -46,5 +46,11 @@ app.get("/register", (req, res, next) => {
   console.log("Served register.");
 });
 
+// Single course page
+app.get("/courses", (req, res, next) => {
+  res.render("courses", { layout: "main" });
+  console.log("Served courses.")
+});
+
 // Make the app listen to port 3000
 app.listen(port, () => console.log(`App listening to port ${port}.`));

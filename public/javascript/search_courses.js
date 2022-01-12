@@ -13,18 +13,18 @@ searchBtn.addEventListener("click", (event) => {
   fetch(API_URL + "courses/search?title=" + keyword)
     .then((response) => response.json())
     .then((data) => {
-      // Get and compile the handlebars template
-      const source = document.getElementById("subject-preview").innerHTML; //script name
-      const template = Handlebars.compile(source);
-      let ourGeneratedHTML = template(data);
+      // Search result's section tag
+      const destination = document.getElementById("course-results-preview");
 
-      let coursesContainer = document.getElementById("course-results-preview");
-      coursesContainer.innerHTML = ourGeneratedHTML;
-      // Create a new preview for each course fetched
-      /*   data.forEach((course) => {
-        console.log(course);
-      });  */
-      console.log(course);
+      // Get and compile the handlebars template
+      const source = document.getElementById("course-preview").innerHTML;
+      const template = Handlebars.compile(source);
+
+      // Create the preview for the courses fetched
+      const html = template({
+        courses: data,
+      });
+      destination.innerHTML += html;
     })
     .catch((err) => console.log(err));
 });

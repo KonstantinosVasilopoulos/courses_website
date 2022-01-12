@@ -1,104 +1,104 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>MOOC</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOOC</title>
 
-	<!-- Google font -->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
 
-	<!-- Link CSS document -->
-	<link rel="stylesheet" href="css/style.css" />
+    <!-- Link CSS document -->
+    <link rel="stylesheet" href="css/style.css" />
 
-	<!-- Handlebars -->
-	<!--<script type="text/javascript" src="handlebars-v2.0.0.js"></script> -->
-</head>
+    <!-- Handlebars -->
 
-<body>
-	<!-- MENU BAR -->
-	<header>
-		<nav>
-			<div>
-				<div>
-					<ul class="flex-nav-list">
-						<li class="nav-item">
-							<a href="/"> <img class="logo" src="images/logo.png" alt="MOOC Logo" /></a>
-							<h2 class="text-red" style="float: right">MOOC Website</h2>
-						</li>
+    =======
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    >>>>>>> 6166c3500e302bb23b01c5af59dedb40812e671a
+  </head>
 
-						<li class="nav-item">
-							<a class="menu-link" href="/">Home</a>
-						</li>
+  <body>
+    <!-- MENU BAR -->
+    <header>
+      <nav>
+        <div>
+          <div>
+            <ul class="flex-nav-list">
+              <li class="nav-item">
+                <a href="/"> <img class="logo" src="images/logo.png" alt="MOOC Logo" /></a>
+                <h2 class="text-red" style="float: right">MOOC Website</h2>
+              </li>
 
-						<li class="nav-item">
-							<a class="menu-link" href="subjects.html">Subjects</a>
-						</li>
+              <li class="nav-item">
+                <a class="menu-link" href="/">Home</a>
+              </li>
 
-						<li class="nav-item">
-							<a class="menu-link" href="about_us.html">About us</a>
-						</li>
+              <li class="nav-item">
+                <a class="menu-link" href="subjects.html">Subjects</a>
+              </li>
 
-						<li class="nav-item">
-							<a class="menu-link" href="contact.html">Contact</a>
-						</li>
+              <li class="nav-item">
+                <a class="menu-link" href="about_us.html">About us</a>
+              </li>
 
-						<li class="nav-item">
-							<button class="log-btn btn-preferences" type="submit">Login</button>
-							<button onclick="window.location.href='/register'" class="register-btn-nav-bar btn-preferences"
-								type="submit">
-								Register
-							</button>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
+              <li class="nav-item">
+                <a class="menu-link" href="contact.html">Contact</a>
+              </li>
 
-	{{{ body }}}
+              <li class="nav-item">
+                <button class="log-btn btn-preferences" type="submit">Login</button>
+                <button onclick="window.location.href='/register'" class="register-btn-nav-bar btn-preferences" type="submit">
+                  Register
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-	<!-- Footer -->
-	<footer>
-		<div id="footer-top-row">
-			<img id="company-logo" src="images/logo.png" alt="logo" />
+    {{{body}}}
 
-			<div class="flex-col sm-items-center">
-				<h4><b>Top Courses</b></h4>
-				<a href="linear_algebra.html" class="text-black footer-link">Linear Algebra</a>
-				<a href="computer_science_introduction.html" class="text-black footer-link">Computer Science
-					Introduction</a>
-				<a href="web_development.html" class="text-black footer-link">Web Development</a>
-			</div>
-			<div class="flex-col sm-items-center">
-				<h4><b>Company</b></h4>
-				<a href="about_us.html" class="text-black footer-link">About Us</a>
-				<a href="contact.html" class="text-black footer-link">Contact Us</a>
-				<a href="#" class="text-black footer-link">Our Team</a>
-			</div>
-			<div class="flex-col sm-items-center footer-grid-buttons">
-				<a href="#" class="btn register-btn">Register</a>
-				<a href="#" class="btn log-btn">Log out</a>
-			</div>
-		</div>
+    <!-- Footer -->
+    <footer>
+      <div id="footer-top-row">
+        <img id="company-logo" src="images/logo.png" alt="logo" />
 
-		<hr id="footer-hr" />
+        <div class="flex-col sm-items-center">
+          <h4><b>Top Courses</b></h4>
+          <a href="linear_algebra.html" class="text-black footer-link">Linear Algebra</a>
+          <a href="computer_science_introduction.html" class="text-black footer-link">Computer Science Introduction</a>
+          <a href="web_development.html" class="text-black footer-link">Web Development</a>
+        </div>
+        <div class="flex-col sm-items-center">
+          <h4><b>Company</b></h4>
+          <a href="about_us.html" class="text-black footer-link">About Us</a>
+          <a href="contact.html" class="text-black footer-link">Contact Us</a>
+          <a href="#" class="text-black footer-link">Our Team</a>
+        </div>
+        <div class="flex-col sm-items-center footer-grid-buttons">
+          <a href="#" class="btn register-btn">Register</a>
+          <a href="#" class="btn log-btn">Log out</a>
+        </div>
+      </div>
 
-		<div class="flex-row flex-wrap flex-content-between sm-m-y-1 sm-flex-content-center">
-			<span>&copy; Photo, Inc. 2019. We love our users!</span>
-			<div class="flex-row items-center sm-m-y-1">
-				<span class="text-black">Follow us:</span>
-				<img class="link-img text-black" src="images/fb_icon.png" alt="facebook" />
-				<img class="link-img text-black" src="images/twitter_icon.png" alt="twitter" />
-				<img class="link-img text-black" src="images/insta_icon.png" alt="instagram" />
-				<img class="link-img text-black" src="images/discord_icon.png" alt="discord" />
-			</div>
-		</div>
-	</footer>
-</body>
+      <hr id="footer-hr" />
+
+      <div class="flex-row flex-wrap flex-content-between sm-m-y-1 sm-flex-content-center">
+        <span>&copy; Photo, Inc. 2019. We love our users!</span>
+        <div class="flex-row items-center sm-m-y-1">
+          <span class="text-black">Follow us:</span>
+          <img class="link-img text-black" src="images/fb_icon.png" alt="facebook" />
+          <img class="link-img text-black" src="images/twitter_icon.png" alt="twitter" />
+          <img class="link-img text-black" src="images/insta_icon.png" alt="instagram" />
+          <img class="link-img text-black" src="images/discord_icon.png" alt="discord" />
+        </div>
+      </div>
+    </footer>
+  </body>
 
 </html>
