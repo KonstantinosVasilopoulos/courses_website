@@ -1,8 +1,17 @@
-<!-- Handlebars template for previewing searched courses -->
-<script id="category-preview" type="text/x-handlebars-template">
-  \{{#each courses}} <div></div>
-  \{{/each}}
+<div id="courses-root"></div>
 
+<!-- Handlbars template -->
+<script id="courses-template" type="text/x-handlebars-template">
+	\{{#each courses}}
+		<section class="course-section">
+			<img src="https://elearning-aueb.herokuapp.com/static/images/\{{this.img}}" alt="course image" class="course-img">
+			<div>
+				<h3>\{{this.title}}</h3>
+				<p class="text-gray">\{{this.description}}</p>
+				<p class="my-2">\{{this.objectives}}</p>
+			</div>
+		</section>
+	\{{/each}}
 </script>
-<script src="/public/javascript/handlebars-v4.7.7.js"></script>
-<script src="javascript/search_courses.js"></script>
+
+<script src="javascript/courses.js"></script>
