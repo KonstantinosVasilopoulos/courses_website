@@ -63,4 +63,12 @@ function validationForm() {
     document.getElementById("password_confirm").style.borderColor = "#929fa6";
     document.getElementById("check_password_confirm").innerHTML = "";
   }
+
+  return true;
 }
+
+// const register = () => {
+//   if (validationForm()) {
+//     //send
+//   }
+// }

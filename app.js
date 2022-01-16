@@ -1,5 +1,6 @@
 const path = require("path");
 const cors = require("cors");
+const User = require("./user.js");
 
 // Load the express module
 const express = require("express");
@@ -42,6 +43,11 @@ const corsOptions = {
 };
 // app.use(cors());
 
+// Database
+users = [
+  new User("Anakin", "Skywalker", "Downing St. 10", "6912345678", "Master", "anakin@example.com", "testing321", 23, "Greece"),
+];
+
 // URLs
 // Homepage
 app.get("/", cors(corsOptions), (req, res, next) => {
@@ -54,6 +60,10 @@ app.get("/register", (req, res, next) => {
   res.render("register", { layout: "main" });
   console.log("Served register.");
 });
+
+// app.post("/register", (req, res, next) => {
+
+// });
 
 // Single course page
 app.get("/courses", (req, res, next) => {
