@@ -735,6 +735,10 @@ iframe {
   padding: 2rem 0;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* Footer styling classes and ids */
 footer {
   display: flex;
