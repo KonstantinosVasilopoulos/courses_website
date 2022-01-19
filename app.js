@@ -1,15 +1,13 @@
 const path = require("path");
 const cors = require("cors");
-const User = require("./user.js");
+const bodyParser = require("body-parser");
+const { User, UserDAO } = require("./user.js");
 
 // Load the express module
 const express = require("express");
 
 // Load the handlebars module
 const handlebars = require("express-handlebars");
-
-// Load the handlebars
-const hbs = require("handlebars");
 
 // Create the express server
 const app = express();
@@ -33,6 +31,10 @@ app.engine(
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
+// For parsing requests' body
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 // Serve static files
 app.use(express.static("public"));
 
@@ -47,6 +49,7 @@ const corsOptions = {
 users = [
   new User("Anakin", "Skywalker", "Downing St. 10", "6912345678", "Master", "anakin@example.com", "testing321", 23, "Greece"),
 ];
+userDAO = new UserDAO();
 
 // URLs
 // Homepage
@@ -64,6 +67,56 @@ app.get("/register", (req, res, next) => {
 // app.post("/register", (req, res, next) => {
 
 // });
+
+// Login page
+app.get("/profile", (req, res, next) => {
+  res.render("profile", {
+    status: false,
+    message: "",
+  });
+  console.log("Served login.");
+});
+
+app.post("/profile", cors({ origin: "*" }), (req, res, next) => {
+  console.log("Received login request.");
+
+  const email = req.body.email;
+  const password = req.body.password;
+
+  // Search for a user matching the given criteria
+  const user = userDAO.getUser(email);
+
+  // Set the response's headers up
+  // res.set("Content-Type", "application/json");
+
+  // No such user found
+  if (user == null) {
+    res.render("profile", {
+      status: false,
+      message: "No such user exists.",
+    });
+  } else {
+    if (user.password == password) {
+      res.render("profile", {
+        status: true,
+        message: "Login successful",
+        "firstName": user.firstName,
+        "lastName": user.lastName,
+        "address": user.address,
+        "phone": user.phone,
+        "education": user.education,
+        "email": user.email,
+        "age": user.age,
+        "country": user.country,
+      });
+    } else {
+      res.render("profile", {
+        status: false,
+        message: "Wrong password.",
+      });
+    }
+  }
+});
 
 // Single course page
 app.get("/courses", (req, res, next) => {

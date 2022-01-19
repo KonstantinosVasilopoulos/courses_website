@@ -12,4 +12,26 @@ class User {
     }
 }
 
-module.exports = User
+class UserDAO {
+    constructor() {
+        this.users = [
+            new User('Anakin', 'Skywalker', 'Downing St. 10', '6912345678', 'Master', 'anakin@example.com', 'testing321', 23, 'Greece'),
+        ]
+    }
+
+    getUser(email) {
+        for (let user of this.users) {
+            if (email == user.email) {
+                return user
+            }
+        }
+
+        return null
+    }
+
+    getAllUsers() {
+        return this.users
+    }
+}
+
+module.exports = { User, UserDAO }
