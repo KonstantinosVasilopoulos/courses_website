@@ -69,17 +69,17 @@ app.get("/register", (req, res, next) => {
 });
 
 app.post("/register", (req, res, next) => {
-  /*   let firstName = req.body.first_name;
-  let lastName = req.body.last_name;
-  let address = req.body.billing_address;
+  let firstName = req.body.firstName;
+  let lastName = req.body.lastName;
+  let address = req.body.address;
   let card_number = req.body.card_number;
   let education = req.body.education;
   let email = req.body.email;
   let password = req.body.password;
   let age = req.body.age;
   let country = req.body.country;
-  console.log(firstName); */
-  const user = req.body;
+
+  const user = new User(firstName, lastName, address, card_number, education, email, password, age, country);
   console.log(user);
   res.end();
 });
