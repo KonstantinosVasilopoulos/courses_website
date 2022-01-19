@@ -69,18 +69,28 @@ app.get("/register", (req, res, next) => {
 });
 
 app.post("/register", (req, res, next) => {
-  let firstName = req.body.firstName;
-  let lastName = req.body.lastName;
-  let address = req.body.address;
-  let card_number = req.body.card_number;
-  let education = req.body.education;
-  let email = req.body.email;
-  let password = req.body.password;
-  let age = req.body.age;
-  let country = req.body.country;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const address = req.body.address;
+  const card_number = req.body.card_number;
+  const education = req.body.education;
+  const email = req.body.email;
+  const password = req.body.password;
+  const age = req.body.age;
+  const country = req.body.country;
 
   const user = new User(firstName, lastName, address, card_number, education, email, password, age, country);
-  console.log(user);
+
+  const index = users.findIndex((User) => User.email === user.email);
+
+  if (index === -1) {
+    users.push(user);
+    console.log(user);
+    console.log(users);
+  } else {
+    console.log("The user already exist!");
+  }
+
   res.end();
 });
 
