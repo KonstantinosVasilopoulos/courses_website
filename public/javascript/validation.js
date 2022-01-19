@@ -70,7 +70,7 @@ function validationForm() {
 }
 
 const registerBtn = document.getElementById("register-submit-btn");
-registerBtn.addEventListener("click", (event) => {
+registerBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   if (validationForm()) {
     const firstName = document.getElementById("first_name").value;
@@ -90,9 +90,11 @@ registerBtn.addEventListener("click", (event) => {
       },
       body: JSON.stringify(user),
     };
-    fetch("/register", options).then((response) => {
-      console.log("Data sent - Network response OK");
-    });
+
+    const response = await fetch("/register", options);
+    const data = await response.json();
+    console.log(data.status);
+
     var frm = document.getElementById("registration-form");
     frm.reset(); // Reset all form data
     document.getElementById("first_name").scrollIntoView({

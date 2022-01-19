@@ -83,15 +83,23 @@ app.post("/register", (req, res, next) => {
 
   const index = users.findIndex((User) => User.email === user.email);
 
+  //Update the array if the new user is not already registered with the same email
   if (index === -1) {
     users.push(user);
     console.log(user);
     console.log(users);
+      res.json({
+        status:"Successful",
+      });
   } else {
-    console.log("The user already exist!");
+    console.log("The user already exist!"); 
+    //Servers' Response
+  res.json({
+    status: "Not successful",
+  });
   }
 
-  res.end();
+ 
 });
 
 // Single course page
