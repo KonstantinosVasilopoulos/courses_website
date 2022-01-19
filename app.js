@@ -1,6 +1,6 @@
 const path = require("path");
 const cors = require("cors");
-const User = require("./user.js");
+const User = require("./public/javascript/user.js");
 
 // Load the express module
 const express = require("express");
@@ -10,6 +10,10 @@ const handlebars = require("express-handlebars");
 
 // Load the handlebars
 const hbs = require("handlebars");
+
+// Load the handlebars
+const bodyParser = require("body-parser");
+const { response } = require("express");
 
 // Create the express server
 const app = express();
@@ -36,6 +40,9 @@ app.set("views", path.join(__dirname, "views"));
 // Serve static files
 app.use(express.static("public"));
 
+// Read JSON files up to 100MB
+app.use(express.json({ limit: "100mb" }));
+
 // Configure CORS
 const corsOptions = {
   origin: "https://elearning-aueb.herokuapp.com/",
@@ -61,9 +68,38 @@ app.get("/register", (req, res, next) => {
   console.log("Served register.");
 });
 
-// app.post("/register", (req, res, next) => {
+app.post("/register", (req, res, next) => {
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const address = req.body.address;
+  const card_number = req.body.card_number;
+  const education = req.body.education;
+  const email = req.body.email;
+  const password = req.body.password;
+  const age = req.body.age;
+  const country = req.body.country;
 
-// });
+  const user = new User(firstName, lastName, address, card_number, education, email, password, age, country);
+
+  const index = users.findIndex((User) => User.email === user.email);
+
+  //Update the array if the new user is not already registered with the same email
+  if (index === -1) {
+    users.push(user);
+    console.log(user);
+    console.log(users);
+    //Servers' Response
+    res.json({
+      status: "Successful Registration",
+    });
+  } else {
+    console.log("The user already exists!");
+    //Servers' Response
+    res.json({
+      status: "Not successful Registration",
+    });
+  }
+});
 
 // Single course page
 app.get("/courses", (req, res, next) => {
