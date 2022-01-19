@@ -15,6 +15,7 @@
     // Redirect to the homepage
     window.location.href.replace('http://127.0.0.1:5501/src/html/index.html')
 }*/
+
 function validationForm() {
   /* First Name */
   let first_name = document.getElementById("first_name").value;
@@ -67,8 +68,30 @@ function validationForm() {
   return true;
 }
 
-// const register = () => {
-//   if (validationForm()) {
-//     //send
-//   }
-// }
+//POST
+/* const register = () => {}; */
+
+const registerBtn = document.getElementById("register-submit-btn");
+registerBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (validationForm()) {
+    const firstName = document.getElementById("first_name").value;
+    const lastName = document.getElementById("last_name").value;
+    const address = document.getElementById("billing_address").value;
+    const card_number = document.getElementById("card_number").value;
+    const education = document.getElementById("edu-high-school").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const age = document.getElementById("age").value;
+    const country = document.getElementById("country").value;
+    const user = { firstName, lastName, address, card_number, education, email, password, age, country };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    };
+    fetch("/register", options);
+  }
+});
