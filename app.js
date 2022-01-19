@@ -80,7 +80,7 @@ app.post("/register", (req, res, next) => {
 
   const user = new User(firstName, lastName, address, card_number, education, email, password, age, country);
 
-  const index = users.findIndex((User) => User.email === user.email);
+  const index = userDAO.addUser(user);
 
   //Update the array if the new user is not already registered with the same email
   if (index === -1) {

@@ -32,6 +32,16 @@ class UserDAO {
     getAllUsers() {
         return this.users
     }
+
+    addUser(user) {
+        const index = users.findIndex((User) => User.email === user.email)
+        if (index == -1) {
+            this.users.push(user)
+            return -1
+        } else {
+            return 0
+        }
+    }
 }
 
 module.exports = { User, UserDAO }
