@@ -1434,3 +1434,31 @@ footer {
 .login-register-link:hover {
   color: var(--red);
 }
+
+/* User profile page styling */
+#profile {
+  margin: 2rem 20rem;
+}
+
+/* Display the user's full name and age in a single line */
+#profile > h2,
+#profile > h4 {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+#profile > ul {
+  list-style: none;
+}
+
+#profile > ul li {
+  color: var(--gray);
+}
+
+#profile > ul > li span {
+  margin: 0.5rem;
+}
+
+.text-right {
+  margin-left: 1.5rem;
+}

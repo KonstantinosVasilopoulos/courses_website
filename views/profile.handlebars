@@ -1,31 +1,29 @@
-<div>
-	{{#if status}}
-		<div>
-			<h2>{{firstName}} {{lastName}}</h2><h4>{{age}} years old</h4>
-			<ul>
-				<li><span>Address<span><span>{{address}}</span></li>
-				<li><span>Phone<span><span>{{phone}}</span></li>
-				<li><span>Education<span><span>{{education}}</span></li>
-				<li><span>Email<span><span>{{email}}</span></li>
-				<li><span>Country<span><span>{{country}}</span></li>
-			</ul>
-		</div>
-	{{else}}
-		<h1>{{message}}</h1>
+{{#if status}}
+	<div id="profile">
+		<h2 class="text-red">{{firstName}} {{lastName}}</h2><h4 class="text-gray">{{age}} years old</h4>
+		<ul>
+			<li><span>Address<span><span class="text-right">{{address}}</span></li>
+			<li><span>Phone<span><span class="text-right">{{phone}}</span></li>
+			<li><span>Education<span><span class="text-right">{{education}}</span></li>
+			<li><span>Email<span><span class="text-right">{{email}}</span></li>
+			<li><span>Country<span><span class="text-right">{{country}}</span></li>
+		</ul>
+	</div>
+{{else}}
+	<h1>{{message}}</h1>
 
-		<form id="registration-form" action="profile" method="post">
-			<fieldset>
-				<legend>Login to your account</legend>
-				<div class="login-item">
-					<input id="login-email-field" type="email" name="email" placeholder="Email" autocomplete="on" required>
-				</div>
-				<div class="login-item">
-					<input id="login-password-field" type="password" name="password" placeholder="Password" required>
-				</div>
-				<button id="login-submit-btn" form="registration-form" type="submit">Login</button>
+	<form id="registration-form" action="profile" method="post">
+		<fieldset>
+			<legend>Login to your account</legend>
+			<div class="login-item">
+				<input id="login-email-field" type="email" name="email" placeholder="Email" autocomplete="on" required>
+			</div>
+			<div class="login-item">
+				<input id="login-password-field" type="password" name="password" placeholder="Password" required>
+			</div>
+			<button id="login-submit-btn" form="registration-form" type="submit">Login</button>
 
-				<i><span class="text-gray">Not a member?</span><a class="login-register-link" href="/register">Register now!</a></i>
-			</fieldset>
-		</form>
-	{{/if}}
-</div>
+			<i><span class="text-gray">Not a member?</span><a class="login-register-link" href="/register">Register now!</a></i>
+		</fieldset>
+	</form>
+{{/if}}
