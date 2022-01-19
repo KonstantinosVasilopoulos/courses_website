@@ -1,7 +1,9 @@
 <!-- Registration form -->
 <main>
-  <!-- Link JavaScript for field validation -->
-  <script src="../javascript/validation.js"></script>
+  {{! Ρegistration results }}
+  <section id="registration-results-preview" class="p-5">
+
+  </section>
 
   <form id="registration-form" onsubmit="return validationForm()">
     <fieldset>
@@ -307,14 +309,19 @@
       <!-- Password -->
       <div class="register-item">
         <label for="password">Password<span class="text-red">*</span></label>
-        <input type="password" id="password" name="password" pattern="[a-zA-Z][a-zA-Z0-9-_.\!]{8,20}" />
+        <input type="password" id="password" name="password" pattern="[a-zA-Z][a-zA-Z0-9-_.\\\\\\\\\\\\\\\!]{8,20}" />
         <p class="text-light-gray font-size-tiny">*May contain numbers , letters and symbols from 8 to 20 characters.</p>
       </div>
 
       <!-- Password confirmation -->
       <div class="register-item">
         <label for="password_confirm">Password confirmation<span class="text-red">*</span></label>
-        <input type="password" id="password_confirm" name="password_confirm" pattern="[a-zA-Z][a-zA-Z0-9-_.\!]{8,20}" />
+        <input
+          type="password"
+          id="password_confirm"
+          name="password_confirm"
+          pattern="[a-zA-Z][a-zA-Z0-9-_.\\\\\\\\\\\\\\\!]{8,20}"
+        />
         <p id="check_password_confirm"></p>
       </div>
 
@@ -330,23 +337,23 @@
       <div class="flex-col">
         <p class="font-bold">Education</p>
         <div class="flex-row-reverse flex-content-between register-item-entry">
-          <input type="radio" name="education-radio" id="edu-high-school" value="High School" checked />
+          <input type="radio" name="education" id="edu-high-school" value="High School" checked />
           <label for="edu-high-school">High School</label>
         </div>
         <div class="flex-row-reverse flex-content-between register-item-entry">
-          <input type="radio" name="education-radio" id="edu-bachelor" value="Bachelor" />
+          <input type="radio" name="education" id="edu-bachelor" value="Bachelor" />
           <label for="edu-bachelor">Bachelor</label>
         </div>
         <div class="flex-row-reverse flex-content-between register-item-entry">
-          <input type="radio" name="education-radio" id="edu-master" value="Master" />
+          <input type="radio" name="education" id="edu-master" value="Master" />
           <label for="edu-master">Master</label>
         </div>
         <div class="flex-row-reverse flex-content-between register-item-entry">
-          <input type="radio" name="education-radio" id="edu-phd" value="PHD" />
+          <input type="radio" name="education" id="edu-phd" value="PHD" />
           <label for="edu-phd">PHD</label>
         </div>
         <div class="flex-row-reverse flex-content-between register-item-entry">
-          <input type="radio" name="education-radio" id="edu-other" value="Other" />
+          <input type="radio" name="education" id="edu-other" value="Other" />
           <label for="edu-other">Other</label>
         </div>
       </div>
@@ -469,4 +476,13 @@
     <!-- Submit button -->
     <button id="register-submit-btn" type="submit" form="registration-form" value="Submit">Submit</button>
   </form>
+
+  <!-- Handlebars template for previewing searched courses -->
+  <!-- WARNING: Handlebars tags have to be escaped with a '\' character! -->
+  <script id="registration-preview" type="text/x-handlebars-template">
+    <div><h2><u class="text-red">\{{result.status}}</u></h2>
+  </script>
+
+  <!-- Link JavaScript for field validation -->
+  <script src="../javascript/validation.js"></script>
 </main>

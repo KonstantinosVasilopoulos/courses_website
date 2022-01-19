@@ -38,6 +38,9 @@ app.use(bodyParser.json());
 // Serve static files
 app.use(express.static("public"));
 
+// Read JSON files up to 100MB
+app.use(express.json({ limit: "100mb" }));
+
 // Configure CORS
 const corsOptions = {
   origin: "https://elearning-aueb.herokuapp.com/",
@@ -64,9 +67,38 @@ app.get("/register", (req, res, next) => {
   console.log("Served register.");
 });
 
-// app.post("/register", (req, res, next) => {
+app.post("/register", (req, res, next) => {
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const address = req.body.address;
+  const card_number = req.body.card_number;
+  const education = req.body.education;
+  const email = req.body.email;
+  const password = req.body.password;
+  const age = req.body.age;
+  const country = req.body.country;
 
-// });
+  const user = new User(firstName, lastName, address, card_number, education, email, password, age, country);
+
+  const index = users.findIndex((User) => User.email === user.email);
+
+  //Update the array if the new user is not already registered with the same email
+  if (index === -1) {
+    users.push(user);
+    console.log(user);
+    console.log(users);
+    //Servers' Response
+    res.json({
+      status: "Successful Registration",
+    });
+  } else {
+    console.log("The user already exists!");
+    //Servers' Response
+    res.json({
+      status: "Not successful Registration",
+    });
+  }
+});
 
 // Login page
 app.get("/profile", (req, res, next) => {
