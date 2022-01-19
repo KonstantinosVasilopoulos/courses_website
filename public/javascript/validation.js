@@ -95,6 +95,22 @@ registerBtn.addEventListener("click", async (event) => {
     const data = await response.json();
     console.log(data.status);
 
+    // Registration result's section tag
+    const destination = document.getElementById("registration-results-preview");
+
+    // Clear the previous search results
+    destination.innerHTML = "";
+
+    // Get and compile the handlebars template
+    const source = document.getElementById("registration-preview").innerHTML;
+    const template = Handlebars.compile(source);
+
+    // Create the preview for the Registration Result
+    const html = template({
+      result: data,
+    });
+    destination.innerHTML += html;
+
     var frm = document.getElementById("registration-form");
     frm.reset(); // Reset all form data
     document.getElementById("first_name").scrollIntoView({

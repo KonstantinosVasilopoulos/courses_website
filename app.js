@@ -88,18 +88,17 @@ app.post("/register", (req, res, next) => {
     users.push(user);
     console.log(user);
     console.log(users);
-      res.json({
-        status:"Successful",
-      });
-  } else {
-    console.log("The user already exist!"); 
     //Servers' Response
-  res.json({
-    status: "Not successful",
-  });
+    res.json({
+      status: "Successful Registration",
+    });
+  } else {
+    console.log("The user already exists!");
+    //Servers' Response
+    res.json({
+      status: "Not successful Registration",
+    });
   }
-
- 
 });
 
 // Single course page
