@@ -90,13 +90,13 @@ app.post("/register", (req, res, next) => {
     console.log(users);
     //Servers' Response
     res.json({
-      status: "Successful Registration",
+      status: "Successful Registration!",
     });
   } else {
     console.log("The user already exists!");
     //Servers' Response
     res.json({
-      status: "Not successful Registration",
+      status: "The user already exists! Please register with another email",
     });
   }
 });
