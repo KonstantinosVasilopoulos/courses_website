@@ -309,7 +309,12 @@
       <!-- Password -->
       <div class="register-item">
         <label for="password">Password<span class="text-red">*</span></label>
-        <input type="password" id="password" name="password" pattern="[a-zA-Z][a-zA-Z0-9-_.\\\\\\\\\\\\\\\\\\\\\\\\\\\!]{8,20}" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          pattern="[a-zA-Z][a-zA-Z0-9-_.\\\\\\\\\\\\\\\\\\\\\\\\\\\!]{8,20}"
+        />
         <p class="text-light-gray font-size-tiny">*May contain numbers , letters and symbols from 8 to 20 characters.</p>
       </div>
 
@@ -492,14 +497,14 @@
     c0.097,0.004,0.194-0.006,0.292-0.014c0.055-0.005,0.109-0.003,0.163-0.012c0.323-0.048,0.641-0.16,0.933-0.346l34.305-21.865
     C131.967,94.755,132.296,93.271,131.583,92.152z" /> <circle fill="none" stroke="#ffffff" stroke-width="5"
     stroke-miterlimit="10" cx="109.486" cy="104.353" r="32.53" /> </svg> <h3 id='status'> Registration Successful </h3> </div>
-    <div id='lower-side'> <p id='message'> Congratulations, your account has been successfully created. </p> <a href="#"
+    <div id='lower-side'> <p id='message'> Congratulations, your account has been successfully created. </p> <a href="/"
     id="contBtn">Continue</a> </div> </div>
     \{{/ifEquals}}
 
     \{{#ifEquals result.status "The user already exists! Please register with another email"}} <div id='card' class="animated
     fadeIn"> <div id='upper-side-red'> <?xml version="1.0" encoding="utf-8"?> <!-- Generator: Adobe Illustrator 17.1.0, SVG Export
     Plug-In . SVG Version: 6.00 Build 0) --> <h3 id='status'> Registration Failed </h3> </div> <div id='lower-side'> <p
-    id='message'> Please, try to register with another email. </p> <a href="#" id="contBtn-red">Continue</a> </div> </div>
+    id='message'> Please, try to register with another email. </p> <a href="/register" id="contBtn-red">Continue</a> </div> </div>
     \{{/ifEquals}}
 
   </script>

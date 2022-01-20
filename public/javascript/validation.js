@@ -126,6 +126,16 @@ registerBtn.addEventListener("click", async (event) => {
   }
 });
 
+/* Continue Button after register results */
+/* const continueBtn = document.getElementById("contBtn");
+continueBtn.addEventListener("click",(event)=>{
+  event.preventDefault();
+  document.location.href = 'main.handlebars';
+} */
+
+function myFunction() {
+  location.replace("main.hanlebars");
+}
 /* 
   async function fetchSomething(event) {
   event.preventDefault();
