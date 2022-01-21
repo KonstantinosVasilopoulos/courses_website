@@ -95,6 +95,11 @@ registerBtn.addEventListener("click", async (event) => {
     const data = await response.json();
     console.log(data.status);
 
+    //Register helper for choosing the right result to be shown at the screen
+    Handlebars.registerHelper("ifEquals", function (arg1, arg2, options) {
+      return arg1 == arg2 ? options.fn(this) : options.inverse(this);
+    });
+
     // Registration result's section tag
     const destination = document.getElementById("registration-results-preview");
 
@@ -110,10 +115,10 @@ registerBtn.addEventListener("click", async (event) => {
       result: data,
     });
     destination.innerHTML += html;
-
+    destination.style.display = "block";
     var frm = document.getElementById("registration-form");
     frm.reset(); // Reset all form data
-    document.getElementById("first_name").scrollIntoView({
+    document.getElementById("registration-results-preview").scrollIntoView({
       behavior: "auto",
       block: "center",
       inline: "center",
@@ -121,6 +126,16 @@ registerBtn.addEventListener("click", async (event) => {
   }
 });
 
+/* Continue Button after register results */
+/* const continueBtn = document.getElementById("contBtn");
+continueBtn.addEventListener("click",(event)=>{
+  event.preventDefault();
+  document.location.href = 'main.handlebars';
+} */
+
+function myFunction() {
+  location.replace("main.hanlebars");
+}
 /* 
   async function fetchSomething(event) {
   event.preventDefault();
