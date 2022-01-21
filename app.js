@@ -147,5 +147,27 @@ app.get("/courses", (req, res, next) => {
   console.log("Served courses.");
 });
 
+// About us page
+app.get("/about-us", (req, res, next) => {
+  res.render("about_us");
+  console.log("Served about us.");
+});
+
+// Contact page
+app.get("/contact", (req, res, next) => {
+  res.render("contact");
+  console.log("Served contact.");
+});
+
+app.get("/costas", (req, res, next) => {
+  res.render("costas");
+  console.log("Served costas.");
+});
+
+app.get("/george", (req, res, next) => {
+  res.render("george");
+  console.log("Served george.");
+});
+
 // Make the app listen to port 3000
 app.listen(port, () => console.log(`App listening to port ${port}.`));
