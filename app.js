@@ -17,12 +17,6 @@ const port = 3000;
 app.engine(
   "handlebars",
   handlebars.engine({
-    /*     helpers: {
-      link: function (url) {
-        var url = Handlebars.escapeExpression(url);
-        return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
-      },
-    }, */
     layoutsDir: path.join(__dirname, "views", "layouts"),
     defaultLayout: "main",
     partialsDir: path.join(__dirname, "views", "partials"),
@@ -118,9 +112,6 @@ app.post("/profile", cors({ origin: "*" }), (req, res, next) => {
   // Search for a user matching the given criteria
   const user = userDAO.getUser(email);
 
-  // Set the response's headers up
-  // res.set("Content-Type", "application/json");
-
   // No such user found
   if (user == null) {
     res.render("profile", {
@@ -158,24 +149,3 @@ app.get("/courses", (req, res, next) => {
 
 // Make the app listen to port 3000
 app.listen(port, () => console.log(`App listening to port ${port}.`));
-
-// register new functions
-/* handlebars.registerHelper("link", function (url) {
-  var url = Handlebars.escapeExpression(url);
-  return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
-}); */
-
-/* hbs.registerHelper("link", function (url) {
-  var url = hbs.escapeExpression(url);
-  return new hbs.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
-}); */
-
-/* var hbs = handlebars.create({
-  // Specify helpers which are only registered on this instance.
-  helpers: {
-    link: function (url) {
-      var url = Handlebars.escapeExpression(url);
-      return new Handlebars.SafeString("<img src='https://elearning-aueb.herokuapp.com/static/images/" + url + "'>");
-    },
-  },
-}); */

@@ -1,6 +1,8 @@
-{{#if status}}
+<div id="login-container">
+	{{#if status}}
 	<div id="profile">
-		<h2 class="text-red">{{firstName}} {{lastName}}</h2><h4 class="text-gray">{{age}} years old</h4>
+		<h2 class="text-red">{{firstName}} {{lastName}}</h2>
+		<h4 class="text-gray">{{age}} years old</h4>
 		<ul>
 			<li><span>Address<span><span class="text-right">{{address}}</span></li>
 			<li><span>Phone<span><span class="text-right">{{phone}}</span></li>
@@ -9,10 +11,14 @@
 			<li><span>Country<span><span class="text-right">{{country}}</span></li>
 		</ul>
 	</div>
-{{else}}
-	<h1>{{message}}</h1>
+	{{else}}
+	{{#if message}}
+	<div class="login-error-box">
+		<h2>{{message}}</h2>
+	</div>
+	{{/if}}
 
-	<form id="registration-form" action="profile" method="post">
+	<form id="login-form" action="profile" method="post">
 		<fieldset>
 			<legend>Login to your account</legend>
 			<div class="login-item">
@@ -21,9 +27,10 @@
 			<div class="login-item">
 				<input id="login-password-field" type="password" name="password" placeholder="Password" required>
 			</div>
-			<button id="login-submit-btn" form="registration-form" type="submit">Login</button>
+			<button id="login-submit-btn" form="login-form" type="submit">Login</button>
 
 			<i><span class="text-gray">Not a member?</span><a class="login-register-link" href="/register">Register now!</a></i>
 		</fieldset>
 	</form>
-{{/if}}
+	{{/if}}
+</div>

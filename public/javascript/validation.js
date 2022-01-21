@@ -1,22 +1,3 @@
-/*const User = require("./public/javascript/user.js");
-const validateRegistrationForm = evt => {
-    evt.preventDefault();
-
-    // Get the error message divs
-    const ageError = document.getElementById('register-error-age')
-    const passwordError = document.getElementById('register-error-password')
-
-    // Ensure that all new users are above 18 years old
-    const ageInput = document.getElementById('age')
-    if (ageInput.value < 18) {
-        ageError.innerText = 'Only users above 18 years old are allowed to register!'
-        return
-    }
-
-    // Redirect to the homepage
-    window.location.href.replace('http://127.0.0.1:5501/src/html/index.html')
-}*/
-
 function validationForm() {
   /* First Name */
   let first_name = document.getElementById("first_name").value;
@@ -125,43 +106,3 @@ registerBtn.addEventListener("click", async (event) => {
     });
   }
 });
-
-/* Continue Button after register results */
-/* const continueBtn = document.getElementById("contBtn");
-continueBtn.addEventListener("click",(event)=>{
-  event.preventDefault();
-  document.location.href = 'main.handlebars';
-} */
-
-function myFunction() {
-  location.replace("main.hanlebars");
-}
-/* 
-  async function fetchSomething(event) {
-  event.preventDefault();
-  if (validationForm()) {
-    const firstName = document.getElementById("first_name").value;
-    const lastName = document.getElementById("last_name").value;
-    const address = document.getElementById("billing_address").value;
-    const card_number = document.getElementById("card_number").value;
-    const education = document.getElementById("edu-high-school").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const age = document.getElementById("age").value;
-    const country = document.getElementById("country").value;
-    const user = { firstName, lastName, address, card_number, education, email, password, age, country };
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    };
-    const response = await fetch("/register", options);
-    await response.text();
-    return response.ok;
-  }
-}
-
-const registerBtn = document.getElementById("register-submit-btn");
-registerBtn.addEventListener("click", fetchSomething); */
