@@ -1398,6 +1398,7 @@ footer {
   display: block;
 }
 
+
 /* Display registration results */
 #registration-results-preview {
   text-align: center;
@@ -1505,4 +1506,68 @@ footer {
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+/* Login form styling */
+#login-submit-btn {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0.5rem;
+  color: var(--red);
+  font-size: 22px;
+  border: 1px solid var(--red);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Have the inputs below their labels */
+#registration-form .login-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Trim the edges of the input tags and enlarge them */
+#registration-form .login-item input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 3px;
+}
+
+/* Make the register link red and add left margin */
+.login-register-link {
+  color: var(--dark-red);
+  margin-left: 0.5rem;
+}
+
+.login-register-link:hover {
+  color: var(--red);
+}
+
+/* User profile page styling */
+#profile {
+  margin: 2rem 20rem;
+}
+
+/* Display the user's full name and age in a single line */
+#profile > h2,
+#profile > h4 {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+#profile > ul {
+  list-style: none;
+}
+
+#profile > ul li {
+  color: var(--gray);
+}
+
+#profile > ul > li span {
+  margin: 0.5rem;
+}
+
+.text-right {
+  margin-left: 1.5rem;
 }
