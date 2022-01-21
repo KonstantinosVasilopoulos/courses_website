@@ -1188,6 +1188,19 @@ footer {
   background-color: var(--red);
 }
 
+/* Search result styling */
+#search-results-container {
+  margin: 0 4rem;
+}
+
+.search-result-description {
+  margin: 0 1rem;
+}
+
+.search-result-img {
+  border-radius: 5px;
+}
+
 /* Tablet */
 @media screen and (max-width: 1056px) {
   /* Same as in mobile */

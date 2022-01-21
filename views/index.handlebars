@@ -70,12 +70,24 @@
   <!-- Handlebars template for previewing searched courses -->
   <!-- WARNING: Handlebars tags have to be escaped with a '\' character! -->
   <script id="course-preview" type="text/x-handlebars-template">
-    <h1>Αποτελέσματα Αναζήτησης</h1> <hr class="red-line" />
-    \{{#each courses}} <div><h2><u class="text-red">\{{this.title}}</u></h2>
-    \{{link this.img}} <h3 class="mb-0">Περιγραφή Μαθήματος</h3> <p class="text-gray my-2 mt-05">\{{this.description}}</p> <h3
-    class="mb-0">Μαθησιακοί στόχοι</h3><p class="text-gray my-2 mt-05">\{{this.objectives}}</p> </div>
-    \{{/each}}
+    <div id="search-results-container">
+      <h1 class="font-inter">Αποτελέσματα Αναζήτησης</h1>
+      <hr class="red-line" />
 
+      \{{#each courses}}
+      <h2><u class="text-red">\{{this.title}}</u></h2>
+      <div class="flex-row">
+        <img class="search-result-img" src="https://elearning-aueb.herokuapp.com/static/images/\{{this.img}}"
+          alt="search result image">
+        <div class="search-result-description">
+          <h3 class="mb-0">Περιγραφή Μαθήματος</h3>
+          <p class="text-gray my-2 mt-05">\{{this.description}}</p>
+          <h3 class="mb-0">Μαθησιακοί στόχοι</h3>
+          <p class="text-gray my-2 mt-05">\{{this.objectives}}</p>
+        </div>
+      </div>
+      \{{/each}}
+    </div>
   </script>
 
   <script src="javascript/search_courses.js"></script>
