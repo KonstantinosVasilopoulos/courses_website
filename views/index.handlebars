@@ -9,7 +9,7 @@
       <form id="search-course">
         <label for="courseName" class="font-bold">Search for a <span class="text-red"> course </span></label><br />
         <input id="courseName" type="text" name="courseName" placeholder="Java" />
-        <button id="search-keyword-btn" type="submit" name="sumbit" class="register-btn-nav-bar btn-preferences">Apply</button>
+        <button id="search-keyword-btn" type="submit" name="sumbit">Apply</button>
       </form>
       {{!   <div id="output"></div >}}
     </div>
@@ -76,7 +76,7 @@
 
       \{{#each courses}}
       <h2><u class="text-red">\{{this.title}}</u></h2>
-      <div class="flex-row">
+      <div class="search-result-item">
         <img class="search-result-img" src="https://elearning-aueb.herokuapp.com/static/images/\{{this.img}}"
           alt="search result image">
         <div class="search-result-description">
